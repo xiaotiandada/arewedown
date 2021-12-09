@@ -1,1 +1,95 @@
-# this file intentionally blank
+transports:
+  slack:
+    enabled: true
+    secret: SLACK_SIGNING_SECRET
+    token: SLACK_BOT_TOKEN
+
+recipients:
+    BobMcName:
+        slack: C02PZ02M0TD
+
+watchers:
+  API Governance:
+      host: "https://governance.matataki.io/api/logs"
+      code: 401
+  API management:
+      host: "https://api-mgr-hk.mttk.net"
+      code: 200
+  API Meta Network:
+      host: "https://network.api.metanetwork.online"
+      code: 200
+  API MTTK:
+      host: "https://api.mttk.net"
+      code: 200
+  API MTTK auth-be:
+      host: "http://auth-be.mttk.net"
+      code: 200
+  API MTTK cache-ore:
+      host: "http://cache-ore.mttk.net"
+      code: 200
+  API MTTK cache-ore subscriptions:
+      host: "https://cache-ore.mttk.net/matataki/status/subscriptions"
+      code: 200
+  API MTTK IPFS:
+      host: "https://api.mttk.net/post/ipfs/QmSr94SdMEdCgGTKyJYTwMdVEzZ28sRiLqfQ7S7c2t8C5h"
+      code: 200
+  API MTTK Token:
+      host: "https://api.mttk.net/minetoken/238"
+      code: 200
+  API Quest:
+      host: "https://misson-hall-api.mttk.net"
+      code: 200
+  Cryptomeetup:
+      host: "https://cryptomeetup.async.moe"
+      code: 200
+  Hero:
+      host: "https://dao-hero.netlify.app"
+      code: 200
+  management:
+      host: "https://mgr-prod.mttk.net"
+      code: 200
+  Matataki Airdrop:
+      host: "https://www.matataki-airdrop.xyz"
+      code: 200
+  Matataki DAO:
+      host: "https://matataki-dao.netlify.app"
+      code: 200
+  Matataki developer:
+      host: "https://developer.matataki.io"
+      code: 200
+  Matataki Doc:
+      host: "https://docs.matataki.io"
+      code: 200
+  Matataki FE Article:
+      host: "https://www.matataki.io/article"
+      code: 200
+  Matataki FE P:
+      host: "https://www.matataki.io/p/9730"
+      code: 200
+  Matataki FE Token:
+      host: "https://www.matataki.io/token/238"
+      code: 200
+  Matataki Governace:
+      host: "https://governance.matataki.io"
+      code: 200
+  Matataki mining:
+      host: "https://matataki-mining.netlify.app"
+      code: 200
+  Matataki NFT Market:
+      host: "https://nft-market.matataki.io"
+      code: 200
+  Matataki Quest:
+      host: "https://quest.matataki.io"
+      code: 200
+  MatatakiMD:
+      host: "https://md.mttk.net"
+      code: 200
+  Metanetowrk Map:
+      host: "https://www.metanetwork.online"
+      code: 200
+  MetaNetwork Home:
+      host: "https://home.metanetwork.online"
+      code: 200
+  OSS aliyuncs cn hongkong:
+      host: "https://smartsignature-img.oss-cn-hongkong.aliyuncs.com/avatar/2020/01/27/4ea1a68f7445d49f4cc36df476be2a09.jpg"
+      code: 200
