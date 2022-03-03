@@ -1,0 +1,12 @@
+{
+  "name": "arewedown",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/xiaotiandada/arewedown.git",
+  "author": "xiaotiandada <istianlei@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "yarn --cwd src --production=false install",
+    "start": "yarn --cwd src start"
+  }
+}
