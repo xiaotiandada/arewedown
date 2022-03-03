@@ -18,7 +18,7 @@
         if (message.data.startsWith('isPassing:'))
             isPassing = message.data === 'isPassing:true' 
         
-        document.title = `${isPassing ? `` : 'ERRORS! ' }Are We Down?` 
+        document.title = `${isPassing ? `` : 'ERRORS! ' }🤖️ Robot monitor` 
     })
 
     function update(){

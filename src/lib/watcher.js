@@ -120,9 +120,11 @@ module.exports = class {
         const settings = require('./settings').get(),
             smtp = require('./smtp'),
             slack = require('./slack'),
+            robotNotification = require('./robotNotification'),
             transportHandlers = {
                 smtp,
-                slack
+                slack,
+                robotNotification
             }
         
         for (const transportName in settings.transports){
