@@ -49,8 +49,10 @@ module.exports = express => {
                     watcher.next = timespan(watcher.nextRun, new Date())
             }
 
+            // console.log('watchers', watchers)
+
             // 暂时只支持 development production tags
-            const watchersProduction = watchers.filter(i => i.config.tag === 'production')
+            const watchersProduction = watchers.filter(i => i.config.tag === 'production' || i.config.tag === undefined)
             const watchersDevelopment = watchers.filter(i => i.config.tag === 'development')
             
             res.send(view({
