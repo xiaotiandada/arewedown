@@ -105,7 +105,7 @@ module.exports = {
             logLevel: 'warn',
 
             // port AWD? listens on.
-            port: 3000,
+            port: process.env.PORT || 3000,
             
             // autoassigned protocol if none is given
             defaultTestProtocol : 'http',
