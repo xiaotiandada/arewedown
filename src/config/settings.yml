@@ -4,6 +4,6 @@ watchers:
       host: "https://github.com"
       code: 200
   API Robot Botification:
-      interval: "*/20 * * * * *"
+      interval: "*/1 * * * *"
       host: "https://robot-notification.herokuapp.com"
       code: 404
