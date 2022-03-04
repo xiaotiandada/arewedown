@@ -48,6 +48,10 @@ module.exports = express => {
                 if (watcher.nextRun)
                     watcher.next = timespan(watcher.nextRun, new Date())
             }
+
+            // 暂时只支持 development production tags
+            const watchersProduction = watchers.filter(i => i.config.tag === 'production')
+            const watchersDevelopment = watchers.filter(i => i.config.tag === 'development')
             
             res.send(view({
                 title : `${settings.header} ${dashboard.name}`,
@@ -55,7 +59,8 @@ module.exports = express => {
                 dashboardRefreshInterval : settings.dashboardRefreshInterval,
                 hasErrors,
                 renderDate: `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`,
-                watchers 
+                watchersProduction: watchersProduction,
+                watchersDevelopment: watchersDevelopment,
             }))
             
         } catch (ex){

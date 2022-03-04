@@ -11,7 +11,10 @@ watchers:
       interval: "*/1 * * * *"
       host: "https://github.com"
       code: 200
+      tag: production
+
   API Robot Botification:
       interval: "*/1 * * * *"
       host: "https://robot-notification.herokuapp.com"
       code: 404
+      tag: production

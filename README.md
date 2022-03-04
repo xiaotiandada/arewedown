@@ -63,6 +63,8 @@ See [contributing](/docs/contributing.md) if you'd like to improve this project.
 
 *AreWeDown?* is available under the [MIT license](https://github.com/shukriadams/arewedown/blob/master/LICENSE).
 
-```
-git subtree push --prefix server heroku master
+```bash
+# git subtree push --prefix server heroku master
+
+git subtree push --prefix src heroku master
 ```

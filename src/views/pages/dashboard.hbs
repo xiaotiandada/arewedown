@@ -1,14 +1,14 @@
 {{#extend "layout"}}
     {{#content "body"}}
+        <p class="grid-title">Production</p>
         <div class="grid">
-
-            {{#if watchers}}
-                {{#each watchers}}
+            {{#if watchersProduction}}
+                {{#each watchersProduction}}
                     <div class="watcher {{#if config.__hasErrors}}watcher--configErrors{{/if}} {{#if isPassing}}watcher--passing{{/if}}">
                         <a href="/watcher/{{config.__name}}" target="_PARENT">
 
                             <div class="cell cell--header">
-                                {{config.name}} 
+                                {{config.name}}
                             </div>
 
                             <div class="cell cell--content">
@@ -39,13 +39,58 @@
                     </div>
                 {{/each}}
             {{else}}
-                <div class="dashboard-message">
+                <div class="dashboard-message-env">
                     Nothing to show yet - add/enable some watchers
                 </div>
             {{/if}}
             
         </div>
+        <p class="grid-title">Development</p>
+        <div class="grid">
+            {{#if watchersDevelopment}}
+                {{#each watchersDevelopment}}
+                    <div class="watcher {{#if config.__hasErrors}}watcher--configErrors{{/if}} {{#if isPassing}}watcher--passing{{/if}}">
+                        <a href="/watcher/{{config.__name}}" target="_PARENT">
 
+                            <div class="cell cell--header">
+                                {{config.name}}
+                            </div>
+
+                            <div class="cell cell--content">
+                                {{#if isPassing}}
+                                    {{#if timeInState}}
+                                        <div class="cell-passing">
+                                            Up {{timeInState}}
+                                        </div>
+                                    {{else}}
+                                        <img class="icon-passing" src="/content/icons/passing.svg" alt="Passing" />
+                                    {{/if}}
+                                {{else}}
+                                    {{#if timeInState}}
+                                        Down {{timeInState}}.
+                                    {{/if}}
+                                    {{errorMessage}}
+                                {{/if}}
+                            </div>
+
+                            <div class="cell watcher-nextUpdateWrapper">
+                                {{#if config.__hasErrors}}
+                                    Disabled (config errors)
+                                {{else}}
+                                    Next check : <span class="watcher-nextUpdate" data-nextUpdate="{{nextRun}}">{{next}}</span> 
+                                {{/if}}
+                            </div>
+                        </a>
+                    </div>
+                {{/each}}
+            {{else}}
+                <div class="dashboard-message-env">
+                    Nothing to show yet - add/enable some watchers
+                </div>
+            {{/if}}
+            
+        </div>
+        <div style="height: 100px;"></div>
     {{/content}}
     {{#content "footer"}}
         <div class="grid">
