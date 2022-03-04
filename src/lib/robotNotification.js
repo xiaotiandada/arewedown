@@ -1,17 +1,13 @@
-
 /**
- * Required Keywords : 通知
+ * Required Keywords : any
  */
 module.exports = {
     async send(receiverTransmissionConfig, watcherName, isPassing){
         const axios = require('axios')
         const log = require('./../lib/logger').instance()
 
-        console.log('ROBOT_NOTIFICATION_API', process.env.ROBOT_NOTIFICATION_API)
-
         log.info('robot notification', receiverTransmissionConfig, watcherName, isPassing)
         try {
-
             const text = isPassing ? `"${watcherName}" is up again 🟢` : `"${watcherName}" is down 🔴`;
 
             const response = await axios({

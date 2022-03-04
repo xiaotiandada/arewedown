@@ -1,3 +1,11 @@
+transports:
+    robotNotification:
+        enabled: true
+
+recipients:
+    me:
+        robotNotification: root
+
 watchers:
   API Governance:
       interval: "*/1 * * * *"

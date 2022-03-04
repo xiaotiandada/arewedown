@@ -118,16 +118,14 @@ module.exports = class {
 
     async sendAlerts(){
         const settings = require('./settings').get(),
-            smtp = require('./smtp'),
-            slack = require('./slack'),
             robotNotification = require('./robotNotification'),
+            // 减少修改原代码 如果接入新的 handle 需要在 settings.yml 配置 transports and recipients
             transportHandlers = {
-                smtp,
-                slack,
                 robotNotification
             }
-        
+            
         for (const transportName in settings.transports){
+
             const transportHandler = transportHandlers[transportName]
             if (!transportHandler){
                 this.log.error(`ERROR : no handler defined for transport ${transportName}`)
